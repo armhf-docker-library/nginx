@@ -1,8 +1,21 @@
-IMAGE_NAME = mazzolino/armhf-nginx
+IMAGE = nginx
+REPOSITORY_IMAGE = armhfbuild/nginx
+ADDITIONAL_TAGS = 1.9 1.9.9
 
-default:
-	docker build -t $(IMAGE_NAME) .
-	docker tag -f $(IMAGE_NAME) $(IMAGE_NAME):1.7.10
-	docker tag -f $(IMAGE_NAME) $(IMAGE_NAME):1.7
-	docker tag -f $(IMAGE_NAME) $(IMAGE_NAME):1
-	docker push $(IMAGE_NAME)
+default: build tag
+
+build:
+	docker build -t $(IMAGE) .
+
+tag:
+	docker tag -f $(IMAGE) $(REPOSITORY_IMAGE)
+	for tag in $(ADDITIONAL_TAGS); do \
+		docker tag -f $(IMAGE) $(IMAGE):$$tag; \
+		docker tag -f $(IMAGE) $(REPOSITORY_IMAGE):$$tag; \
+	done
+
+push:
+	docker push $(REPOSITORY_IMAGE)
+	for tag in $(ADDITIONAL_TAGS); do \
+		docker push $(REPOSITORY_IMAGE):$$tag; \
+	done
