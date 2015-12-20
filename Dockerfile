@@ -1,4 +1,4 @@
-FROM mazzolino/armhf-debian:jessie
+FROM armhfbuild/debian:jessie
 
 MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 
