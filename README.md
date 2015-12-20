@@ -11,3 +11,5 @@ Just replace the `nginx` image with `armhfbuild/nginx` everywhere you use the im
 ## How to build the image yourself
 
 This image is built from the [mazzolino/armhf-debian](https://registry.hub.docker.com/u/mazzolino/armhf-debian/) base image which contains emulation support. That means you can also build this image from your amd64 machine. (See the base image's page for more information.)
+
+Just run `make` to build the image.
