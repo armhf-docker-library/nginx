@@ -1,3 +1,5 @@
+[![Build Status](https://armdrone.strahlungsfrei.de/api/badges/armhf-docker-library/nginx/status.svg)](https://armdrone.strahlungsfrei.de/armhf-docker-library/nginx)
+
 # About this Repo
 
 This is the Git repo of the official Docker image for [nginx](https://registry.hub.docker.com/_/nginx/), adjusted for hard-float ARM devices (ARMv7 and better). The corresponding image is available as [armhfbuild/nginx](https://registry.hub.docker.com/u/armhfbuild/nginx). See the
