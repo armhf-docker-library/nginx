@@ -5,7 +5,7 @@ pipeline:
   docker:
     image: armhfplugins/docker
     username: ${DOCKER_USER}
-    email: ${DOCKER_EMAIL}
     password: ${DOCKER_PASSWORD}
+    email: ${DOCKER_EMAIL}
     repo: armhfbuild/nginx
-    tag: ${DRONE_BRANCH}
+    tags: ${DRONE_BRANCH}
