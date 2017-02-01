@@ -1,17 +1,11 @@
-publish:
-  docker:
-    username: $$DOCKER_USER
-    email: $$DOCKER_EMAIL
-    password: $$DOCKER_PASSWORD
-    repo: armhfbuild/nginx
-    tag: $$BRANCH
-    storage_driver: overlay
+pipeline:
+  clone:
+    image: armhfplugins/git
 
-    # Caching
-    load: docker/image.tar
-    save:
-      destination: docker/image.tar
-      tag: $$BRANCH
-cache:
-  mount:
-    - docker/image.tar
+  docker:
+    image: armhfplugins/docker
+    username: ${DOCKER_USER}
+    email: ${DOCKER_EMAIL}
+    password: ${DOCKER_PASSWORD}
+    repo: armhfbuild/nginx
+    tag: ${DRONE_BRANCH}
