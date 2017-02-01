@@ -5,7 +5,7 @@ MAINTAINER NGINX Docker Maintainers "docker-maint@nginx.com"
 RUN apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 RUN echo "deb-src http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list
 
-ENV NGINX_VERSION 1.9.9
+ENV NGINX_VERSION 1.11.9
 
 RUN apt-get update && \
     apt-get install -y ca-certificates
