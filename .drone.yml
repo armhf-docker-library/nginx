@@ -8,6 +8,8 @@ pipeline:
     password: ${DOCKER_PASSWORD}
     email: ${DOCKER_EMAIL}
     repo: armhfbuild/nginx
-    tags: ${DRONE_BRANCH}
+    tags: ${NGINX_VERSION} latest
+    build_args:
+      - NGINX_VERSION=1.11.9
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
