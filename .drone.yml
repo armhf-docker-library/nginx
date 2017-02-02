@@ -9,3 +9,5 @@ pipeline:
     email: ${DOCKER_EMAIL}
     repo: armhfbuild/nginx
     tags: ${DRONE_BRANCH}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
