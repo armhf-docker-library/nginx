@@ -2,7 +2,7 @@
 
 # About this Repo
 
-This is the Git repo of the official Docker image for [nginx](https://registry.hub.docker.com/_/nginx/), adjusted for hard-float ARM devices (ARMv7 and better). The corresponding image is available as [armhfbuild/nginx](https://registry.hub.docker.com/u/armhfbuild/nginx). See the
+This is the Git repo of the official Docker image for [nginx](https://hub.docker.com/_/nginx/), adjusted for hard-float ARM devices (ARMv7 and better). The corresponding image is available as [armhfbuild/nginx](https://hub.docker.com/r/armhfbuild/nginx/). See the
 Hub page for the full readme on how to use the Docker image and for information
 regarding contributing and issues.
 
@@ -12,6 +12,6 @@ Just replace the `nginx` image with `armhfbuild/nginx` everywhere you use the im
 
 ## How to build the image yourself
 
-This image is built from the [mazzolino/armhf-debian](https://registry.hub.docker.com/u/mazzolino/armhf-debian/) base image which contains emulation support. That means you can also build this image from your amd64 machine. (See the base image's page for more information.)
+This image is built from the [mazzolino/armhf-debian](https://hub.docker.com/r/mazzolino/armhf-debian/) base image which contains emulation support. That means you can also build this image from your amd64 machine. (See the base image's page for more information.)
 
 Just run `make` to build the image.
