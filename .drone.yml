@@ -1,17 +1,15 @@
-publish:
-  docker:
-    username: $$DOCKER_USER
-    email: $$DOCKER_EMAIL
-    password: $$DOCKER_PASSWORD
-    repo: armhfbuild/nginx
-    tag: $$BRANCH
-    storage_driver: overlay
+pipeline:
+  clone:
+    image: armhfplugins/git
 
-    # Caching
-    load: docker/image.tar
-    save:
-      destination: docker/image.tar
-      tag: $$BRANCH
-cache:
-  mount:
-    - docker/image.tar
+  docker:
+    image: armhfplugins/docker
+    username: ${DOCKER_USER}
+    password: ${DOCKER_PASSWORD}
+    email: ${DOCKER_EMAIL}
+    repo: armhfbuild/nginx
+    tags: [ "1.11.9", "1.11", "1", "latest" ]
+    build_args:
+      - NGINX_VERSION=1.11.9
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
